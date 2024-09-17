@@ -23,7 +23,19 @@ class Ticket {
     required this.clase,
   });
 
- 
+  // Convertir de Firebase snapshot a objeto Ticket
+  factory Ticket.fromDocument(DocumentSnapshot doc) {
+    return Ticket(
+      id: doc.id,
+      numeroVuelo: doc['numeroVuelo'],
+      aerolinea: doc['aerolinea'],
+      pasajero: doc['pasajero'],
+      origen: doc['origen'],
+      destino: doc['destino'],
+      asiento: doc['asiento'],
+      clase: doc['clase'],
+    );
+  }
 
 
 

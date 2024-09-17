@@ -1,16 +1,14 @@
-// ticket_model.dart
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Ticket {
-  String id;
-  String numeroVuelo;
-  String aerolinea;
-  String pasajero;
-  String origen;
-  String destino;
-  String asiento;
-  String clase;
+  final String id;
+  final String numeroVuelo;
+  final String aerolinea;
+  final String pasajero;
+  final String origen;
+  final String destino;
+  final String asiento;
+  final String clase;
 
   Ticket({
     required this.id,
@@ -23,21 +21,6 @@ class Ticket {
     required this.clase,
   });
 
-  // Convertir de Firebase snapshot a objeto Ticket
-  factory Ticket.fromDocument(DocumentSnapshot doc) {
-    return Ticket(
-      id: doc.id,
-      numeroVuelo: doc['numeroVuelo'],
-      aerolinea: doc['aerolinea'],
-      pasajero: doc['pasajero'],
-      origen: doc['origen'],
-      destino: doc['destino'],
-      asiento: doc['asiento'],
-      clase: doc['clase'],
-    );
-  }
-
-
   Map<String, dynamic> toMap() {
     return {
       'numeroVuelo': numeroVuelo,
@@ -48,5 +31,41 @@ class Ticket {
       'asiento': asiento,
       'clase': clase,
     };
+  }
+
+  factory Ticket.fromDocument(DocumentSnapshot doc) {
+    final data = doc.data() as Map<String, dynamic>;
+    return Ticket(
+      id: doc.id,
+      numeroVuelo: data['numeroVuelo'] ?? '',
+      aerolinea: data['aerolinea'] ?? '',
+      pasajero: data['pasajero'] ?? '',
+      origen: data['origen'] ?? '',
+      destino: data['destino'] ?? '',
+      asiento: data['asiento'] ?? '',
+      clase: data['clase'] ?? '',
+    );
+  }
+
+  Ticket copyWith({
+    String? id,
+    String? numeroVuelo,
+    String? aerolinea,
+    String? pasajero,
+    String? origen,
+    String? destino,
+    String? asiento,
+    String? clase,
+  }) {
+    return Ticket(
+      id: id ?? this.id,
+      numeroVuelo: numeroVuelo ?? this.numeroVuelo,
+      aerolinea: aerolinea ?? this.aerolinea,
+      pasajero: pasajero ?? this.pasajero,
+      origen: origen ?? this.origen,
+      destino: destino ?? this.destino,
+      asiento: asiento ?? this.asiento,
+      clase: clase ?? this.clase,
+    );
   }
 }

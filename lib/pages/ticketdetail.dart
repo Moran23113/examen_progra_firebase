@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 class TicketDetailScreen extends StatelessWidget {
   final String id;
 
-  TicketDetailScreen({required this.id});
+  const TicketDetailScreen({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class TicketDetailScreen extends StatelessWidget {
     final ticket = provider.tickets.firstWhere((t) => t.id == id);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Ticket Details')),
+      appBar: AppBar(title: const Text('Información de Ticket')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

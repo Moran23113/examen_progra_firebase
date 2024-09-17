@@ -1,14 +1,12 @@
-
 import 'package:examen_progra_firebase/model/ticket_model.dart';
 import 'package:examen_progra_firebase/pages/ticketprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 class TicketEditScreen extends StatefulWidget {
   final String id;
 
-  TicketEditScreen({required this.id});
+  const TicketEditScreen({super.key, required this.id});
 
   @override
   _TicketEditScreenState createState() => _TicketEditScreenState();

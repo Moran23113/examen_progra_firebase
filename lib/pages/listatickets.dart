@@ -5,6 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:examen_progra_firebase/pages/ticketprovider.dart';
 
 class TicketListScreen extends StatelessWidget {
+  const TicketListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<TicketProvider>(context);

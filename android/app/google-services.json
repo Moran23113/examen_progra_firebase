@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "320222826434",
+    "project_id": "ticketavion-fa993",
+    "storage_bucket": "ticketavion-fa993.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320222826434:android:e68b2d53df6b12a65e105b",
+        "android_client_info": {
+          "package_name": "com.vuelo.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJVb2Cbk0ROurvm84JZ-V5kr6mKgSU5fE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

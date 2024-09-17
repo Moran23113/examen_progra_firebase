@@ -38,5 +38,15 @@ class Ticket {
   }
 
 
-
+  Map<String, dynamic> toMap() {
+    return {
+      'numeroVuelo': numeroVuelo,
+      'aerolinea': aerolinea,
+      'pasajero': pasajero,
+      'origen': origen,
+      'destino': destino,
+      'asiento': asiento,
+      'clase': clase,
+    };
+  }
 }

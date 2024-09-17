@@ -8,11 +8,10 @@ class TicketListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<TicketProvider>(context);
 
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.blueAccent, Colors.purpleAccent],
             begin: Alignment.topLeft,
@@ -23,10 +22,10 @@ class TicketListScreen extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(16.0),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Tickets',
                     style: TextStyle(
                       color: Colors.white,
